@@ -1,0 +1,40 @@
+# Credentials
+.env.agents
+.env
+.env.local
+
+# MCP configs with secrets
+.claude/mcp.json
+.vscode/mcp.json
+.gemini/settings.json
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Node
+node_modules/
+package-lock.json
+
+# Media (raw and exports can be large)
+media/raw/
+media/exports/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# Google Ads config (contains credentials)
+google-ads.yaml
+
+# Session archives (can get large)
+memory/ARCHIVES/*.gz
