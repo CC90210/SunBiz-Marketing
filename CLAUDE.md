@@ -30,6 +30,7 @@ Map every task to the correct tool BEFORE acting:
 | Structured reasoning | Sequential Thinking MCP | sequential-thinking |
 | Workflow automation | n8n MCP | n8n-mcp |
 | Social media posting | Late MCP | late |
+| Email blasts / outbound | Gmail SMTP (scripts/email_blast.py) | direct |
 
 ### RULE 3: Credentials Protocol
 - ALL API keys, tokens, and secrets live in `.env.agents` (NEVER hardcode)
@@ -37,6 +38,7 @@ Map every task to the correct tool BEFORE acting:
 - If exposed secret detected → STOP immediately, alert user, initiate rotation
 - Google Ads: developer token + OAuth2 refresh token + client ID/secret
 - Meta Ads: system user access token + app ID + app secret
+- Gmail: GMAIL_ADDRESS + GMAIL_APP_PASSWORD (App Password from Google Account security)
 
 ### RULE 4: Cross-File Sync
 When changing ANY configuration:
@@ -76,12 +78,14 @@ When changing ANY configuration:
 | `/sync` | End-of-session sync (update STATE.md, ACTIVE_TASKS.md, SESSION_LOG.md) |
 | `/debug` | Systematic debugging protocol |
 | `/commit` | Smart git commit with integrity checks |
+| `/email-blast` | Send HTML email campaign to recipient list (Gmail SMTP) |
+| `/email-test` | Send test email to single address for preview |
 
 ---
 
 ## SUB-AGENT ORCHESTRATION
 
-15 specialized agents in `agents/`:
+16 specialized agents in `agents/`:
 
 | Agent | Role | Model |
 |-------|------|-------|
@@ -100,6 +104,7 @@ When changing ANY configuration:
 | documenter | Documentation, SOPs, memory management | Sonnet |
 | workflow-builder | n8n automation, scheduled tasks | Sonnet |
 | image-generator | AI ad creative generation (Gemini Imagen) | Opus |
+| email-outbound | Gmail email blasts, HTML templates, lead tracking | Opus |
 
 Dispatch by task complexity:
 - **Trivial** (status check, single read): Direct execution
@@ -111,7 +116,7 @@ Dispatch by task complexity:
 
 ## SKILLS LIBRARY
 
-18 skills in `skills/`:
+19 skills in `skills/`:
 - `google-ads-management` — Full Google Ads API operations
 - `meta-ads-management` — Full Meta Marketing API operations
 - `campaign-creation` — End-to-end campaign setup flow
@@ -130,6 +135,7 @@ Dispatch by task complexity:
 - `image-generation` — AI ad creative generation via Gemini Imagen (prompt templates, A/B variants)
 - `lead-generation` — Lead capture funnels (Meta Lead Forms, landing pages, qualification, follow-up)
 - `lending-industry` — MCA industry knowledge, compliance, regulations, MCA-specific ad strategies
+- `email-outbound` — Gmail email blasts, HTML templates, CAN-SPAM compliance, lead tracking
 
 ---
 
