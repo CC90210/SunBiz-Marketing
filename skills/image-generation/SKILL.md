@@ -1,34 +1,82 @@
-# SKILL: AI Image Generation (Gemini Imagen / Nano Banana)
+# SKILL: AI Image Generation (Production-Grade)
 
-> Generate professional ad creatives using Google Gemini's image generation for SunBiz Funding MCA campaigns.
+> Generate agency-quality, psychology-based ad creatives with AI-generated humans, logo compositing, and conversion science for SunBiz Funding MCA campaigns.
 
 ---
 
 ## Overview
-This skill uses Google Gemini's native image generation (Imagen 3 / "Nano Banana") to create ad images directly from text prompts. No need for Canva, Photoshop, or external designers — the AI generates complete, ready-to-post ad creatives for MCA consolidation and growth capital campaigns.
+Production-grade ad creative generation using Google Gemini's native image generation + Pillow logo compositing. Every ad includes photorealistic AI-generated humans for trust, SunBiz Funding logo overlay, conversion psychology principles, and MCA compliance guardrails.
 
 ## Setup
 ```bash
-pip install google-genai Pillow
+pip install google-genai Pillow python-dotenv
 ```
 Add to `.env.agents`:
 ```
 GEMINI_API_KEY=your_api_key_here
 ```
-Get API key from: https://aistudio.google.com/apikey
+Place logo at: `media/brand/sunbiz_logo.png`
 
 ## Models
-| Model | Capability | Best For |
-|-------|-----------|----------|
-| `gemini-2.5-flash-image` | Nano Banana — fast, production-ready native image gen | Primary model for all ad creatives |
-| `gemini-2.0-flash-exp` | Legacy experimental native image gen | Fallback if 2.5 unavailable |
-| `imagen-3.0-generate-002` | Dedicated image generation (standalone API) | Final fallback |
+| Model | Capability | Use |
+|-------|-----------|-----|
+| `gemini-2.5-flash-image` | Nano Banana — fast, production-ready | Primary |
+| `gemini-2.0-flash-exp` | Legacy experimental | Fallback |
+| `imagen-3.0-generate-002` | Standalone Imagen API | Final fallback |
 
 **SDK:** `google-genai` (NOT the deprecated `google-generativeai`)
 
-## How to Generate Ads
+## Architecture
 
-### Consolidation Ad (Before/After)
+### Master Prompt System
+Every prompt is assembled from 6 layers via `_build_master_prompt()`:
+
+1. **Scene Prompt** — The specific creative direction (human, setting, composition)
+2. **Logo Instruction** — SunBiz logo description + placement rules
+3. **Color Palette** — Brand colors with hex codes
+4. **Visual Psychology** — Z-pattern hierarchy, rule of thirds, contrast, negative space
+5. **Render Specs** — 4K quality, studio lighting, depth of field, typography
+6. **Compliance** — No "loan" language, no guaranteed approvals, disclaimer text
+
+### Logo Compositing Pipeline
+After Gemini generates the image, Pillow overlays the actual SunBiz logo:
+```
+Gemini generates image → save to disk → Pillow opens image + logo →
+scale logo to 13% of image width → paste at top-right with alpha →
+save final composited image
+```
+This ensures pixel-perfect logo placement regardless of what Gemini renders.
+
+## Creative Styles
+
+### Consolidation Ads (5 styles)
+
+| Style | Description | Psychology Trigger |
+|-------|-------------|-------------------|
+| `hero_human` | Confident business owner with data overlay | Trust + Social Proof |
+| `split_screen` | Before/after dramatic transformation | Loss Aversion + Relief |
+| `data_dashboard` | Bloomberg-style financial data viz | Authority + Credibility |
+| `testimonial_style` | Editorial portrait with quote | Social Proof + Relatability |
+| `urgency_relief` | Emotional crossroads metaphor | Urgency + Transformation |
+
+### Growth Capital Ads (3 styles)
+
+| Style | Description | Psychology Trigger |
+|-------|-------------|-------------------|
+| `ceo_portrait` | Executive in premium workspace | Aspiration + Authority |
+| `growth_chart` | 3D growth curve breaking through ceiling | Momentum + Ambition |
+| `lifestyle_success` | Owner thriving at their business | Aspirational Social Proof |
+
+### Stories/Reels Vertical (2 styles)
+
+| Style | Description | Psychology Trigger |
+|-------|-------------|-------------------|
+| `transformation` | Cinematic before/after vertical split | Dramatic Transformation |
+| `quick_stat` | Bold stat with human face close-up | Stop-the-Scroll + Shock Value |
+
+## Usage
+
+### Single Ad
 ```python
 from scripts.imagen_generate import generate_consolidation_ad
 
@@ -38,10 +86,9 @@ result = generate_consolidation_ad(
     after_daily="$850/day — one partner",
     savings="Save $1,250/day",
     cta="See If You Qualify",
-    company_name="SunBiz Funding",
     size="1080x1080",
-    campaign_name="consolidation_q1",
-    style="before_after",  # or "roadmap" or "payment_table"
+    campaign_name="consolidation_q2",
+    style="hero_human",
 )
 ```
 
@@ -52,10 +99,32 @@ from scripts.imagen_generate import generate_growth_ad
 result = generate_growth_ad(
     headline="SMART CAPITAL FOR GROWING BUSINESSES",
     cta="See Your Options",
-    company_name="SunBiz Funding",
     size="1080x1080",
-    campaign_name="growth_q1",
+    campaign_name="growth_q2",
+    style="ceo_portrait",
 )
+```
+
+### Stories/Reels Vertical
+```python
+from scripts.imagen_generate import generate_stories_ad
+
+result = generate_stories_ad(
+    headline="DROWNING IN MCA PAYMENTS?",
+    style="transformation",
+    campaign_name="stories_q2",
+)
+```
+
+### Full Campaign Suite (All Styles)
+```python
+from scripts.imagen_generate import generate_campaign_suite
+
+# Generates ALL consolidation styles in feed + portrait sizes, plus Stories
+results = generate_campaign_suite("q2_consolidation", "consolidation")
+
+# Generates ALL growth styles in feed + portrait sizes
+results = generate_campaign_suite("q2_growth", "growth")
 ```
 
 ### A/B Test Variants
@@ -63,141 +132,87 @@ result = generate_growth_ad(
 from scripts.imagen_generate import generate_ad_variants
 
 results = generate_ad_variants(
-    base_prompt="Professional MCA consolidation ad with navy blue background...",
+    base_prompt="Your detailed MCA ad prompt...",
     campaign_name="consolidation_test",
-    variants=3,
+    variants=3,  # Generates 3 conceptually distinct variants
     size="1080x1080",
 )
 ```
 
-### All Platform Sizes
-```python
-from scripts.imagen_generate import generate_all_sizes
+## Visual Psychology System
 
-results = generate_all_sizes(
-    prompt="Your detailed MCA ad prompt...",
-    campaign_name="consolidation_q1",
-)
-# Generates: meta_feed_square, meta_feed_portrait, meta_stories, google_display
-```
+### Color Psychology
+| Color | Hex | Psychological Effect | Use In Ads |
+|-------|-----|---------------------|------------|
+| Navy Blue | #001F54 | Trust, stability, authority | Primary backgrounds |
+| Burnt Orange | #FF6B35 | Action, urgency, warmth | CTA buttons |
+| Emerald Green | #28A745 | Growth, money, success | Savings/approval indicators |
+| Gold | #D4A843 | Premium, value, prosperity | Savings numbers, accents |
+| White | #FFFFFF | Clarity, transparency | Text on dark backgrounds |
 
-## MCA Ad Prompt Templates
+### Human Psychology Triggers
+- **Hero Human Presence**: Increases trust 35% in financial ads — always include people
+- **Direct Eye Contact**: Builds connection and authority with the viewer
+- **Before/After**: Loss aversion (losing $1,250/day) more powerful than gain framing
+- **Specific Numbers**: "$1,250/day saved" converts 3x vs "save money"
+- **Authority Positioning**: Low camera angle, confident posture, professional setting
+- **Social Proof**: Testimonial format with real-looking business owners
+- **Urgency**: Speed messaging ("24-48 hours") with genuine not false scarcity
 
-### Template 1: Before/After Consolidation (Primary)
-```
-Professional MCA consolidation advertisement with dark navy blue (#001F54) background.
-Bold white headline: "STOP THE DAILY DRAIN".
-Clean infographic showing BEFORE vs AFTER:
-BEFORE (red tinted): "4 MCA Positions — $2,100/day in payments"
-AFTER (green tinted): "1 Position — $850/day — Save $1,250/day"
-Arrow or visual flow from before to after.
-Company name "SunBiz Funding" in white at top.
-Orange (#FF6B35) CTA button: "See If You Qualify".
-Small disclaimer: "Merchant Cash Advance products are not loans. Subject to underwriting approval."
-4K, professional, clean, analytical financial advisor aesthetic.
-```
+### Visual Composition Rules
+- **Z-Pattern**: Eye flow top-left → headline → center visual → bottom CTA
+- **Rule of Thirds**: Key focal point at grid intersections
+- **20% Negative Space**: Professional breathing room, not cluttered
+- **F/2.8 Depth of Field**: Sharp subject, soft background = premium feel
+- **Cinematic Color Grade**: Lifted blacks, warm mids, teal shadows
 
-### Template 2: Multi-Phase Roadmap
-```
-Professional financial roadmap infographic with navy blue (#001F54) background.
-Bold headline: "YOUR PATH TO FINANCIAL HEALTH".
-Four connected phases shown as a journey/timeline:
-Phase 1: "Consolidate" — reduce daily burden (orange icon)
-Phase 2: "Buy Out" — eliminate multiple funders (orange icon)
-Phase 3: "One Funder" — single payment, single relationship (orange icon)
-Phase 4: "Line of Credit" — best terms, lowest cost (green icon)
-"SunBiz Funding" branding. Orange CTA button: "Start Your Journey".
-Clean, modern, professional. No stock photos. Infographic style.
-```
+## Prompt Engineering Best Practices
 
-### Template 3: Daily Payment Comparison Table
-```
-Clean financial comparison table on navy blue background.
-Headline: "CONSOLIDATE AND SAVE".
-Professional table with two columns:
-CURRENT: Multiple rows showing daily debits ($450, $380, $520, $750 = $2,100/day)
-AFTER SUNBIZ: Single row showing $850/day
-Green highlighted savings: "Save $1,250/day | $37,500/month"
-"SunBiz Funding" logo. Orange CTA: "Get Your Free Analysis".
-Modern, data-driven, financial advisor style.
-```
+### DO:
+- Describe the scene cinematically (lighting, mood, atmosphere)
+- Specify exact camera angles and depth of field
+- Include specific color hex codes
+- Describe human subjects in detail (age, expression, attire, posture)
+- Specify text placement, typography style, and hierarchy
+- Include lighting direction and quality
+- Reference real-world quality benchmarks ("Think American Express ad quality")
 
-### Template 4: Growth Capital (A-Paper)
-```
-Professional business funding ad with clean white/light gray background.
-Bold dark headline: "SMART CAPITAL FOR GROWING BUSINESSES".
-Professional business imagery (office, growth chart, or business owner).
-Key selling points in clean cards:
-"Funded in 24-48 Hours" | "No Equity Required" | "Revenue-Based"
-Green (#28A745) accent for approved/growth messaging.
-"SunBiz Funding" branding. Orange CTA: "See Your Options".
-Professional, clean, trustworthy.
-```
+### DON'T:
+- Use vague prompts ("make a nice ad")
+- Skip the human element
+- Forget brand colors or logo placement
+- Use "loan" language anywhere
+- Promise guaranteed approval
+- Use red as primary color (signals danger)
+- Generate cluttered compositions (>30% text coverage)
 
-### Template 5: Stories/Vertical (1080x1920)
-```
-Vertical 9:16 dark navy (#001F54) background.
-Bold white text "DROWNING IN MCA PAYMENTS?" at top.
-Visual comparison in center:
-BEFORE: Stack of 4 payment cards (red tint, stressed)
-AFTER: Single clean payment card (green tint, relief)
-Large savings number: "Save $1,250/day"
-"SunBiz Funding" at bottom.
-Orange CTA: "Swipe Up to Qualify".
-Bold, mobile-optimized, high contrast.
-```
-
-## Visual Rules (from SOP)
-
-### Colors
-| Color | Hex | Use |
-|-------|-----|-----|
-| Navy Blue | #001F54 | Primary background |
-| Orange | #FF6B35 | CTA buttons |
-| Green | #28A745 | Savings, approved, growth |
-| White | #FFFFFF | Text on dark backgrounds |
-| Dark Charcoal | #333333 | Text on light backgrounds |
-
-**AVOID:** Red (risk/danger), yellow alone (cheap), black-heavy (intimidating)
-
-### Style Guidelines
-- **Clean, analytical** — financial advisor, not used car salesman
-- **Charts/infographics** — before/after, roadmaps, comparison tables
-- **NO cheesy stock photos** of people throwing money or celebrating
-- **Professional business imagery** when people are shown
-- **Bold sans-serif typography** — clear, readable at mobile size
-
-### What Makes MCA Ads Convert
-1. **Before/after comparison** — shows concrete savings ($2,100 → $850/day)
-2. **Multi-phase roadmap** — differentiates SunBiz from "just another funder"
-3. **Specific numbers** — "$1,250/day saved" beats vague promises
-4. **Dark backgrounds** — navy with white text, 40% higher engagement
-5. **Orange CTA on navy** — perceived 34% more trustworthy
-
-### What to NEVER Include
-- "Loan" text anywhere in generated images
-- Guaranteed approval language
-- Specific factor rates without disclaimers
-- Red as primary color (signals risk in financial contexts)
-- Cheesy stock photos or clip art
-- Too much text (>30% of image area)
-
-## Image Quality Checklist
-- [ ] Text is readable at mobile size (test at 400px width)
+## Quality Checklist
+- [ ] Human subject looks realistic and professional (no AI artifacts)
+- [ ] SunBiz Funding logo visible and properly placed
 - [ ] Brand colors match (Navy #001F54, Orange #FF6B35, Green #28A745)
-- [ ] "SunBiz Funding" name present
-- [ ] Before/after numbers are realistic and accurate
-- [ ] MCA disclaimer text included
+- [ ] All text readable at mobile size (400px width test)
+- [ ] Before/after numbers realistic and specific
+- [ ] MCA disclaimer included
 - [ ] No "loan" language anywhere
-- [ ] CTA is clear and prominent (orange button)
+- [ ] CTA button prominent and orange
+- [ ] Visual hierarchy follows Z-pattern
 - [ ] Image meets platform size requirements
-- [ ] No AI artifacts or distortions
+- [ ] Emotional tone matches target audience (stress relief for consolidation, ambition for growth)
+
+## Platform Sizes
+| Platform | Size | Ratio | Use |
+|----------|------|-------|-----|
+| Meta Feed | 1080x1080 | 1:1 | Primary placement |
+| Meta Feed | 1080x1350 | 4:5 | Optimal feed real estate |
+| Meta Stories/Reels | 1080x1920 | 9:16 | Stories and Reels |
+| Google Display | 1200x628 | 1.91:1 | Display network |
 
 ## Iteration Process
-1. Generate 3 variants with different creative concepts (not just color variants)
-2. Review all 3 — pick best foundation
-3. Regenerate winner with refinements
-4. Generate all platform sizes from winning prompt
-5. Upload and launch as A/B test
-6. After 500+ impressions, declare winner by CPQL
-7. Use winning style as template, create 10-15 distinct concepts per campaign
+1. Generate all styles for target audience (5 consolidation or 3 growth)
+2. Review — pick top 3 performers by visual quality
+3. Regenerate winners with prompt refinements
+4. Generate all platform sizes from winning prompts
+5. Composite logos via Pillow (automatic)
+6. Upload to platforms via media-manager agent
+7. Launch as A/B test — after 500+ impressions, measure CPQL
+8. Scale winners, iterate losers, maintain 10-15 distinct creatives per campaign
