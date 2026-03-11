@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SunBiz Funding — Email Template Library</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+    }
+    .header {
+      background: linear-gradient(135deg, #001F54 0%, #0a2d6e 50%, #001F54 100%);
+      border-bottom: 4px solid #D4A843;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+    .header h1 span { color: #D4A843; }
+    .header p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 1px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #334155;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #D4A843;
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    .badge-growth { background: #10b981; color: #fff; }
+    .badge-consolidation { background: #FF6B35; color: #fff; }
+    .badge-urgency { background: #ef4444; color: #fff; }
+    .badge-trust { background: #3b82f6; color: #fff; }
+    .badge-premium { background: #D4A843; color: #001F54; }
+    .badge-problem { background: #f59e0b; color: #001F54; }
+    .badge-minimal { background: #64748b; color: #fff; }
+    .badge-seasonal { background: #22c55e; color: #fff; }
+    .card-body {
+      padding: 24px;
+    }
+    .card-body h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .card-body p {
+      font-size: 13px;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .card-features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .card-features li {
+      font-size: 12px;
+      color: #cbd5e1;
+      padding: 3px 0;
+    }
+    .card-features li::before {
+      content: ">";
+      color: #D4A843;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+    .btn-preview {
+      display: inline-block;
+      background: #FF6B35;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+    .btn-preview:hover { background: #e55a2b; }
+    .btn-new-tab {
+      display: inline-block;
+      background: transparent;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border: 1px solid #475569;
+      border-radius: 6px;
+      margin-left: 8px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-new-tab:hover { border-color: #D4A843; color: #D4A843; }
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #475569;
+      font-size: 12px;
+    }
+    .footer span { color: #D4A843; }
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #D4A843;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #334155;
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SUN<span>BIZ</span> FUNDING</h1>
+  <p>EMAIL TEMPLATE LIBRARY &mdash; 8 PRODUCTION-READY VARIANTS</p>
+</div>
+
+<div class="container">
+
+  <p class="section-title">Growth Capital Templates</p>
+  <div class="grid" style="margin-bottom: 40px;">
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-growth">Growth Capital</span>
+        <h3>SunBiz Funding (Main)</h3>
+        <p>The flagship template. Funding amount grid ($5K&ndash;$100K) with weekly payments, green gradient header, value props, full CAN-SPAM footer.</p>
+        <ul class="card-features">
+          <li>3x2 clickable funding grid</li>
+          <li>Personalized greeting + business name</li>
+          <li>Requirements qualification box</li>
+          <li>Orange CTA with subtext</li>
+        </ul>
+        <a href="sunbiz_funding.html" class="btn-preview">Preview</a>
+        <a href="sunbiz_funding.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-seasonal">Seasonal</span>
+        <h3>Q2 Growth Push</h3>
+        <p>Spring/Q2 seasonal energy. Use-case cards (inventory, equipment, marketing, cash flow), vibrant green theme, momentum-driven messaging.</p>
+        <ul class="card-features">
+          <li>2x2 use-case cards with icons</li>
+          <li>$5K&ndash;$250K funding range callout</li>
+          <li>Stats bar with business metrics</li>
+          <li>Seasonal urgency without false scarcity</li>
+        </ul>
+        <a href="seasonal_q2_growth.html" class="btn-preview">Preview</a>
+        <a href="seasonal_q2_growth.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-premium">Premium</span>
+        <h3>Executive High-Ticket</h3>
+        <p>Elegant, understated, luxury feel for $50K+ prospects. Serif typography, navy CTA, consultation-style approach. Goldman Sachs energy.</p>
+        <ul class="card-features">
+          <li>2x2 refined benefit cards</li>
+          <li>Navy CTA (not orange &mdash; premium feel)</li>
+          <li>CEO testimonial blockquote</li>
+          <li>Georgia serif for authority</li>
+        </ul>
+        <a href="premium_executive.html" class="btn-preview">Preview</a>
+        <a href="premium_executive.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-title">Consolidation Templates</p>
+  <div class="grid" style="margin-bottom: 40px;">
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-consolidation">Consolidation</span>
+        <h3>Consolidation Blast</h3>
+        <p>MCA consolidation focus. Before/after payment comparison, 4-phase roadmap, urgency messaging for overleveraged merchants.</p>
+        <ul class="card-features">
+          <li>Before/after payment table</li>
+          <li>4-phase consolidation roadmap</li>
+          <li>Testimonial social proof block</li>
+          <li>Navy header with orange urgency pill</li>
+        </ul>
+        <a href="consolidation_blast.html" class="btn-preview">Preview</a>
+        <a href="consolidation_blast.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-problem">Problem &rarr; Solution</span>
+        <h3>Pain Point Converter</h3>
+        <p>Red X pain points &rarr; green checkmark solutions. Dramatic before/after comparison with exact dollar savings. High-conversion format.</p>
+        <ul class="card-features">
+          <li>5 pain points with red X icons</li>
+          <li>5 solutions with green checkmarks</li>
+          <li>$2,100/day &rarr; $850/day comparison</li>
+          <li>"$37,500/month back in your business"</li>
+        </ul>
+        <a href="problem_solution.html" class="btn-preview">Preview</a>
+        <a href="problem_solution.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="section-title">Trust & Engagement Templates</p>
+  <div class="grid" style="margin-bottom: 40px;">
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-urgency">Urgency</span>
+        <h3>Fast Funding</h3>
+        <p>Speed-focused. "3 Min &rarr; 4 Hours &rarr; 24 Hours" stat cards. Gold urgency banner. For prospects who need capital NOW.</p>
+        <ul class="card-features">
+          <li>3 speed stat cards (navy + gold)</li>
+          <li>"APPROVED IN HOURS &mdash; NOT WEEKS"</li>
+          <li>Simple requirements box</li>
+          <li>No hard credit pull messaging</li>
+        </ul>
+        <a href="urgency_fast_funding.html" class="btn-preview">Preview</a>
+        <a href="urgency_fast_funding.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-trust">Social Proof</span>
+        <h3>Testimonial Trust</h3>
+        <p>3 customer success stories with star ratings. "Trusted by 500+ businesses" banner. Pure social proof play for skeptical prospects.</p>
+        <ul class="card-features">
+          <li>3 stacked testimonial cards</li>
+          <li>Gold star ratings</li>
+          <li>Restaurant, construction, retail stories</li>
+          <li>"$50M+ Deployed" stats bar</li>
+        </ul>
+        <a href="social_proof_testimonial.html" class="btn-preview">Preview</a>
+        <a href="social_proof_testimonial.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <span class="card-badge badge-minimal">Personal</span>
+        <h3>Minimal Clean Letter</h3>
+        <p>Reads like a personal email from a funding advisor, not a marketing blast. Serif body, minimal design, maximum authenticity.</p>
+        <ul class="card-features">
+          <li>Personal letter format (Georgia serif)</li>
+          <li>No heavy graphics or grids</li>
+          <li>Narrow "personal" CTA button</li>
+          <li>Phone + email sign-off</li>
+        </ul>
+        <a href="minimal_clean.html" class="btn-preview">Preview</a>
+        <a href="minimal_clean.html" target="_blank" class="btn-new-tab">New Tab</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>SUN<span>BIZ</span> FUNDING &mdash; Email Template Library</p>
+  <p style="margin-top: 4px;">8 templates &bull; All CAN-SPAM compliant &bull; All link to JotForm</p>
+  <p style="margin-top: 4px;">Open any template to preview. Tokens ({{first_name}}, etc.) will show as-is in preview.</p>
+</div>
+
+</body>
+</html>
