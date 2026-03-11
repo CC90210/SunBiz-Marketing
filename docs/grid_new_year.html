@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Business Funding — SunBiz Funding</title>
+  <title>New Year Business Capital — SunBiz Funding</title>
   <!--[if mso]>
   <noscript>
     <xml>
@@ -40,9 +40,9 @@
       background-color: #ffffff;
     }
 
-    /* Header */
+    /* Header — clean fresh green gradient */
     .header {
-      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #001F54 100%);
+      background: linear-gradient(135deg, #059669 0%, #10b981 45%, #34d399 100%);
       padding: 32px 40px 28px;
       text-align: center;
     }
@@ -67,9 +67,26 @@
       letter-spacing: 1px;
     }
 
+    .header-headline {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 18px 0 0;
+      line-height: 1.35;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .header-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      margin: 8px 0 0;
+      font-weight: 500;
+    }
+
     /* Status Banner */
     .status-banner {
-      background-color: #D4A843;
+      background-color: #001F54;
       text-align: center;
       padding: 10px 20px;
     }
@@ -78,7 +95,7 @@
       margin: 0;
       font-size: 13px;
       font-weight: 700;
-      color: #001F54;
+      color: #D4A843;
       letter-spacing: 0.5px;
     }
 
@@ -110,6 +127,32 @@
       color: #475569;
       line-height: 1.7;
       margin: 0 0 28px;
+    }
+
+    /* Goal Box */
+    .goal-box {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+      border: 2px solid #10b981;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+    }
+
+    .goal-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #059669;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 12px;
+    }
+
+    .goal-box p {
+      font-size: 15px;
+      color: #1e293b;
+      line-height: 1.65;
+      margin: 0;
+      font-style: italic;
     }
 
     /* Requirements Box */
@@ -144,6 +187,39 @@
       color: #10b981;
       font-weight: 700;
       margin-right: 8px;
+      font-size: 16px;
+    }
+
+    /* Use Cases Box */
+    .use-cases-box {
+      background-color: #eff6ff;
+      border-left: 4px solid #001F54;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+
+    .use-cases-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #001F54;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 12px;
+    }
+
+    .use-case-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #1e293b;
+    }
+
+    .use-case-item:last-child { margin-bottom: 0; }
+
+    .use-case-icon {
+      margin-right: 10px;
       font-size: 16px;
     }
 
@@ -206,7 +282,7 @@
 
     .cta-button {
       display: inline-block;
-      background-color: #FF6B35;
+      background-color: #059669;
       color: #ffffff !important;
       text-decoration: none;
       font-size: 16px;
@@ -262,6 +338,29 @@
       font-size: 12px;
       color: #64748b;
       line-height: 1.5;
+    }
+
+    /* Forward-looking stats strip */
+    .resolution-strip {
+      background-color: #001F54;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .resolution-strip p {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 6px;
+    }
+
+    .resolution-strip .strip-sub {
+      font-size: 13px;
+      color: #10b981;
+      margin: 0;
+      font-weight: 600;
     }
 
     /* Disclaimer */
@@ -336,6 +435,10 @@
         letter-spacing: 2px !important;
       }
 
+      .header-headline {
+        font-size: 16px !important;
+      }
+
       .body-content {
         padding: 24px 20px 20px !important;
       }
@@ -403,6 +506,8 @@
       <td class="header">
         <p class="header-logo-text">SUN<span>BIZ</span> FUNDING</p>
         <p class="header-tagline">Private Lending &amp; Working Capital</p>
+        <p class="header-headline">NEW YEAR. NEW CAPITAL. NEW GROWTH.</p>
+        <p class="header-sub">Start the year with the working capital to hit your targets</p>
       </td>
     </tr>
 
@@ -411,7 +516,7 @@
     ================================================================ -->
     <tr>
       <td class="status-banner">
-        <p>&#9889; FAST APPROVAL &nbsp;|&nbsp; SAME-DAY FUNDING AVAILABLE &nbsp;|&nbsp; NO BANK DELAYS</p>
+        <p>&#127881; Q1 IS HERE &nbsp;|&nbsp; START STRONG &nbsp;|&nbsp; SAME-DAY FUNDING AVAILABLE</p>
       </td>
     </tr>
 
@@ -426,16 +531,27 @@
 
         <!-- Headline -->
         <h1 class="headline">
-          Funding Built for <span>Growing Businesses</span> Like {{business_name}}
+          {{business_name}} Has Big Goals This Year — <span>Start Capitalized</span>
         </h1>
 
         <!-- Intro -->
         <p class="intro-text">
-          We know running a business means you can't always wait weeks for capital.
-          Whether you're looking to expand, cover payroll, or manage cash flow,
-          SunBiz Funding provides fast, flexible capital tailored to your revenue —
-          not your credit score.
+          The businesses that win the year start Q1 with capital already in place.
+          Whether you're setting up new systems, hiring key staff, launching a
+          marketing push, or expanding capacity — working capital from SunBiz Funding
+          puts the resources behind your ambitions from day one.
+          No bank delays. No endless paperwork. Just capital to execute.
         </p>
+
+        <!-- Goal Box -->
+        <div class="goal-box">
+          <h3>The Q1 Commitment</h3>
+          <p>
+            "The businesses that outperform their competition this year won't be the
+            ones that planned harder — they'll be the ones that started with capital
+            behind them and executed from strength, not scarcity."
+          </p>
+        </div>
 
         <!-- Requirements Box -->
         <div class="requirements-box">
@@ -446,8 +562,17 @@
           <p class="req-item"><span class="req-check">&#10003;</span> U.S.-based business</p>
         </div>
 
+        <!-- Use Cases -->
+        <div class="use-cases-box">
+          <h3>Put Q1 Capital to Work</h3>
+          <p class="use-case-item"><span class="use-case-icon">&#128187;</span> Set up new systems &amp; technology platforms</p>
+          <p class="use-case-item"><span class="use-case-icon">&#128101;</span> Hire key staff to execute your annual plan</p>
+          <p class="use-case-item"><span class="use-case-icon">&#128200;</span> Launch marketing campaigns before competitors</p>
+          <p class="use-case-item"><span class="use-case-icon">&#127968;</span> Expand capacity to handle growth targets</p>
+        </div>
+
         <!-- Funding Amounts -->
-        <p class="section-title">Select Your Funding Amount</p>
+        <p class="section-title">Select Your Q1 Funding Amount</p>
         <table class="amounts-table" role="presentation" cellspacing="0" cellpadding="0" border="0">
           <tr>
             <td class="amount-cell">
@@ -494,20 +619,26 @@
         <!-- Primary CTA -->
         <div class="cta-wrapper">
           <a href="https://form.jotform.com/253155026259254" target="_blank" rel="noopener" class="cta-button">
-            Apply Now &rarr;
+            Start the Year Strong &rarr;
           </a>
           <p class="cta-subtext">Takes under 3 minutes &bull; No credit pull &bull; Same-day decisions</p>
         </div>
 
         <hr class="divider" />
 
+        <!-- Resolution Strip -->
+        <div class="resolution-strip">
+          <p>This year, {{business_name}} executes from a position of strength.</p>
+          <p class="strip-sub">Working capital available today &bull; Apply in 3 minutes &bull; Funded within 24 hours</p>
+        </div>
+
         <!-- Value Props -->
         <table class="value-props-table" role="presentation" cellspacing="0" cellpadding="0" border="0">
           <tr>
             <td class="value-prop-cell">
-              <span class="vp-icon">&#128176;</span>
-              <span class="vp-title">Low Minimums</span>
-              <span class="vp-desc">Start from $5K — right-sized capital for your stage of growth</span>
+              <span class="vp-icon">&#127881;</span>
+              <span class="vp-title">Fresh Start</span>
+              <span class="vp-desc">Begin Q1 with capital already deployed — not waiting for approval</span>
             </td>
             <td class="value-prop-cell">
               <span class="vp-icon">&#9889;</span>
@@ -515,9 +646,9 @@
               <span class="vp-desc">Same-day decisions. Funding in your account within 24 hours</span>
             </td>
             <td class="value-prop-cell">
-              <span class="vp-icon">&#129309;</span>
-              <span class="vp-title">Flexible Terms</span>
-              <span class="vp-desc">Payments scale with your revenue — not a fixed bank schedule</span>
+              <span class="vp-icon">&#128640;</span>
+              <span class="vp-title">Scale-Ready</span>
+              <span class="vp-desc">Flexible working capital that grows with your business all year</span>
             </td>
           </tr>
         </table>

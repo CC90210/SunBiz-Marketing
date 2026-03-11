@@ -53,13 +53,16 @@ When changing ANY configuration:
 - After media upload → verify asset is available
 - Git: always `git status` after commits
 
-### RULE 6: MCA Compliance (NON-NEGOTIABLE)
-- **Language:** NEVER use "loan" for MCA products — always "advance," "funding," or "capital"
+### RULE 6: Language & Compliance (NON-NEGOTIABLE)
+- **External language:** NEVER use "MCA", "Merchant Cash Advance", or "loan" in customer-facing content
+- **Use instead:** "private lending", "working capital", "business funding", "business capital"
+- **Credit pulls:** Say "no credit pull" or "no UCC" — NOT "no hard credit pull"
 - **Approvals:** NEVER promise guaranteed approval — use "See if you qualify"
 - **Meta Ads:** Special Ad Category CREDIT required — no age/gender/zip targeting
 - **Google Ads:** Cannot guarantee terms, must disclose if lead generator vs. direct funder
 - **FTC/ECOA/TILA:** No deceptive practices, no discrimination, specific terms require full disclosure
 - **CTAs:** ALL ad CTAs link to the JotForm — single lead capture destination
+- **Excluded industries:** Real Estate Development, Pawn Shop, Vape Shop, Financial Services (excl. Accounting), Crypto, Cannabis, Auto Sales, Gas Station
 
 ---
 

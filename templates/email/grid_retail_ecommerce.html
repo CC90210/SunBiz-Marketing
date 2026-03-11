@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Business Funding — SunBiz Funding</title>
+  <title>Retail & E-Commerce Funding — SunBiz Funding</title>
   <!--[if mso]>
   <noscript>
     <xml>
@@ -42,7 +42,7 @@
 
     /* Header */
     .header {
-      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #001F54 100%);
+      background: linear-gradient(135deg, #10b981 0%, #059669 40%, #001F54 100%);
       padding: 32px 40px 28px;
       text-align: center;
     }
@@ -65,6 +65,15 @@
       color: rgba(255,255,255,0.85);
       margin: 6px 0 0;
       letter-spacing: 1px;
+    }
+
+    .header-headline {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 18px 0 0;
+      line-height: 1.3;
+      letter-spacing: 0.5px;
     }
 
     /* Status Banner */
@@ -144,6 +153,39 @@
       color: #10b981;
       font-weight: 700;
       margin-right: 8px;
+      font-size: 16px;
+    }
+
+    /* Use Cases Box */
+    .use-cases-box {
+      background-color: #fefce8;
+      border-left: 4px solid #D4A843;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin-bottom: 28px;
+    }
+
+    .use-cases-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #92400e;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 12px;
+    }
+
+    .use-case-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #1e293b;
+    }
+
+    .use-case-item:last-child { margin-bottom: 0; }
+
+    .use-case-icon {
+      margin-right: 10px;
       font-size: 16px;
     }
 
@@ -228,6 +270,35 @@
       border: none;
       border-top: 1px solid #e2e8f0;
       margin: 0 0 28px;
+    }
+
+    /* Testimonial */
+    .testimonial-box {
+      background-color: #f8fafc;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin-bottom: 28px;
+      border-top: 3px solid #D4A843;
+    }
+
+    .testimonial-quote {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 12px;
+    }
+
+    .testimonial-author {
+      font-size: 13px;
+      font-weight: 700;
+      color: #001F54;
+      margin: 0;
+    }
+
+    .testimonial-role {
+      font-size: 12px;
+      color: #64748b;
     }
 
     /* Value Props */
@@ -336,6 +407,10 @@
         letter-spacing: 2px !important;
       }
 
+      .header-headline {
+        font-size: 18px !important;
+      }
+
       .body-content {
         padding: 24px 20px 20px !important;
       }
@@ -403,6 +478,7 @@
       <td class="header">
         <p class="header-logo-text">SUN<span>BIZ</span> FUNDING</p>
         <p class="header-tagline">Private Lending &amp; Working Capital</p>
+        <p class="header-headline">GROW YOUR RETAIL BUSINESS</p>
       </td>
     </tr>
 
@@ -411,7 +487,7 @@
     ================================================================ -->
     <tr>
       <td class="status-banner">
-        <p>&#9889; FAST APPROVAL &nbsp;|&nbsp; SAME-DAY FUNDING AVAILABLE &nbsp;|&nbsp; NO BANK DELAYS</p>
+        <p>&#128722; RETAIL &amp; E-COMMERCE SPECIALISTS &nbsp;|&nbsp; SAME-DAY FUNDING &nbsp;|&nbsp; NO CREDIT PULL</p>
       </td>
     </tr>
 
@@ -426,15 +502,15 @@
 
         <!-- Headline -->
         <h1 class="headline">
-          Funding Built for <span>Growing Businesses</span> Like {{business_name}}
+          Stock Up, Expand, and <span>Outpace the Competition</span>
         </h1>
 
         <!-- Intro -->
         <p class="intro-text">
-          We know running a business means you can't always wait weeks for capital.
-          Whether you're looking to expand, cover payroll, or manage cash flow,
-          SunBiz Funding provides fast, flexible capital tailored to your revenue —
-          not your credit score.
+          Whether you're stocking up for a big sales season, expanding to a new location,
+          or scaling your e-commerce marketing — {{business_name}} needs capital that moves
+          as fast as your business does. SunBiz Funding delivers flexible working capital
+          based on your revenue, not your credit score. No bank paperwork. No waiting.
         </p>
 
         <!-- Requirements Box -->
@@ -444,6 +520,15 @@
           <p class="req-item"><span class="req-check">&#10003;</span> $250K+ annual revenue ($20K+/month)</p>
           <p class="req-item"><span class="req-check">&#10003;</span> 1+ year in business</p>
           <p class="req-item"><span class="req-check">&#10003;</span> U.S.-based business</p>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="use-cases-box">
+          <h3>How Retail Owners Use This Capital</h3>
+          <p class="use-case-item"><span class="use-case-icon">&#128230;</span> Bulk inventory purchases &amp; seasonal stocking</p>
+          <p class="use-case-item"><span class="use-case-icon">&#128200;</span> Marketing &amp; advertising campaigns</p>
+          <p class="use-case-item"><span class="use-case-icon">&#127968;</span> New store location build-out &amp; expansion</p>
+          <p class="use-case-item"><span class="use-case-icon">&#128421;</span> E-commerce platform upgrades &amp; tech stack</p>
         </div>
 
         <!-- Funding Amounts -->
@@ -494,20 +579,30 @@
         <!-- Primary CTA -->
         <div class="cta-wrapper">
           <a href="https://form.jotform.com/253155026259254" target="_blank" rel="noopener" class="cta-button">
-            Apply Now &rarr;
+            See If You Qualify &rarr;
           </a>
           <p class="cta-subtext">Takes under 3 minutes &bull; No credit pull &bull; Same-day decisions</p>
         </div>
 
         <hr class="divider" />
 
+        <!-- Testimonial -->
+        <div class="testimonial-box">
+          <p class="testimonial-quote">
+            "I needed to stock up before a major sales event and my usual supplier required
+            payment upfront. SunBiz came through in 24 hours. My inventory arrived on time,
+            we sold out, and the capital paid for itself three times over."
+          </p>
+          <p class="testimonial-author">Sandra M. <span class="testimonial-role">— Owner, Specialty Retail Boutique, Fort Lauderdale FL</span></p>
+        </div>
+
         <!-- Value Props -->
         <table class="value-props-table" role="presentation" cellspacing="0" cellpadding="0" border="0">
           <tr>
             <td class="value-prop-cell">
-              <span class="vp-icon">&#128176;</span>
-              <span class="vp-title">Low Minimums</span>
-              <span class="vp-desc">Start from $5K — right-sized capital for your stage of growth</span>
+              <span class="vp-icon">&#128722;</span>
+              <span class="vp-title">Inventory Ready</span>
+              <span class="vp-desc">Get stocked before peak season — never miss a sales opportunity</span>
             </td>
             <td class="value-prop-cell">
               <span class="vp-icon">&#9889;</span>
@@ -517,7 +612,7 @@
             <td class="value-prop-cell">
               <span class="vp-icon">&#129309;</span>
               <span class="vp-title">Flexible Terms</span>
-              <span class="vp-desc">Payments scale with your revenue — not a fixed bank schedule</span>
+              <span class="vp-desc">Payments scale with your revenue — not a fixed monthly bank schedule</span>
             </td>
           </tr>
         </table>

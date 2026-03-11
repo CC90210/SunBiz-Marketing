@@ -72,7 +72,20 @@ The core offering that differentiates SunBiz from competitors:
 - Revenue under $15K/month
 - Merchants with chronic NSFs (>7)
 - "Death Spiral" merchants (>45% leverage + declining revenue)
-- Specific restricted industries per campaign (Trucking, Staffing, Auto — varies by funder)
+
+### Excluded Industries (NEVER target)
+| Industry | Reason |
+|----------|--------|
+| Real Estate Development | Restricted |
+| Pawn Shop | Restricted |
+| Vape Shop | Restricted |
+| Financial Services (excluding Accounting) | Restricted |
+| Crypto / Cryptocurrency | Restricted |
+| Cannabis / Marijuana | Restricted |
+| Auto Sales / Dealerships | Restricted |
+| Gas Station | Restricted |
+
+**We target literally every other industry under the sun.** These 8 are the only exclusions.
 
 ## Brand Identity
 
@@ -83,16 +96,19 @@ The core offering that differentiates SunBiz from competitors:
 - **Relationship-driven** — Long-term partnership, not one-time transaction
 - **Educational** — We teach merchants about leverage ratios, cash flow management
 
-### Language Rules (CRITICAL)
+### Language Rules (CRITICAL — External Communications)
 | Use | Do NOT Use | Why |
 |-----|-----------|-----|
-| Advance | Loan | MCA is not a loan — legal/compliance distinction |
-| Funding | Lending | Same reason |
-| Capital | Money | Professional positioning |
-| Consolidation strategy | Refinance | MCA doesn't "refinance" — it consolidates |
-| Daily payment | Interest rate | MCA uses factor rates, not APR |
-| Funder / Capital partner | Lender | Industry terminology |
-| Merchant | Borrower | MCA industry standard |
+| Private lending | Loan | Not a traditional loan product |
+| Working capital | Merchant Cash Advance / MCA | Never mention MCA in external comms |
+| Business funding / Business capital | Money | Professional positioning |
+| Debt consolidation | Refinance | We consolidate, not refinance |
+| No credit pull / No UCC | No hard credit pull | Simpler, cleaner messaging |
+| Funding | Lending (in product context) | Professional positioning |
+| Capital partner | Lender | Relationship framing |
+| Business owner | Borrower / Merchant | Customer-facing language |
+
+**KEY RULE:** In all customer-facing materials (emails, ads, landing pages), NEVER use "Merchant Cash Advance", "MCA", or industry jargon. Use "private lending", "working capital", "business funding" instead. Internal docs may reference MCA for operational clarity.
 
 ### Key Messages (Ranked by Use)
 1. "Overleveraged? We build a multi-phase path to financial health."
