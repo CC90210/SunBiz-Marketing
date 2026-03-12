@@ -125,6 +125,21 @@
       transition: border-color 0.2s, color 0.2s;
     }
     .btn-new-tab:hover { border-color: #D4A843; color: #D4A843; }
+    .btn-download {
+      display: inline-block;
+      background: transparent;
+      color: #10b981;
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border: 1px solid #10b981;
+      border-radius: 6px;
+      margin-left: 6px;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-download:hover { background: #10b981; color: #fff; }
     .footer {
       text-align: center;
       padding: 40px 20px;
@@ -169,6 +184,7 @@
         </ul>
         <a href="sunbiz_funding.html" class="btn-preview">Preview</a>
         <a href="sunbiz_funding.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('sunbiz_funding.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -184,6 +200,7 @@
         </ul>
         <a href="premium_executive.html" class="btn-preview">Preview</a>
         <a href="premium_executive.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('premium_executive.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -199,6 +216,7 @@
         </ul>
         <a href="minimal_clean.html" class="btn-preview">Preview</a>
         <a href="minimal_clean.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('minimal_clean.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -220,6 +238,7 @@
         </ul>
         <a href="grid_restaurant_hospitality.html" class="btn-preview">Preview</a>
         <a href="grid_restaurant_hospitality.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('grid_restaurant_hospitality.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -235,6 +254,7 @@
         </ul>
         <a href="grid_construction_trades.html" class="btn-preview">Preview</a>
         <a href="grid_construction_trades.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('grid_construction_trades.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -250,6 +270,7 @@
         </ul>
         <a href="grid_retail_ecommerce.html" class="btn-preview">Preview</a>
         <a href="grid_retail_ecommerce.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('grid_retail_ecommerce.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -271,6 +292,7 @@
         </ul>
         <a href="seasonal_q2_growth.html" class="btn-preview">Preview</a>
         <a href="seasonal_q2_growth.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('seasonal_q2_growth.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -286,6 +308,7 @@
         </ul>
         <a href="grid_summer_push.html" class="btn-preview">Preview</a>
         <a href="grid_summer_push.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('grid_summer_push.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -301,6 +324,7 @@
         </ul>
         <a href="grid_year_end.html" class="btn-preview">Preview</a>
         <a href="grid_year_end.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('grid_year_end.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -316,6 +340,7 @@
         </ul>
         <a href="grid_new_year.html" class="btn-preview">Preview</a>
         <a href="grid_new_year.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('grid_new_year.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -337,6 +362,7 @@
         </ul>
         <a href="consolidation_blast.html" class="btn-preview">Preview</a>
         <a href="consolidation_blast.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('consolidation_blast.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -352,6 +378,7 @@
         </ul>
         <a href="problem_solution.html" class="btn-preview">Preview</a>
         <a href="problem_solution.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('problem_solution.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -373,6 +400,7 @@
         </ul>
         <a href="urgency_fast_funding.html" class="btn-preview">Preview</a>
         <a href="urgency_fast_funding.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('urgency_fast_funding.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -388,6 +416,7 @@
         </ul>
         <a href="social_proof_testimonial.html" class="btn-preview">Preview</a>
         <a href="social_proof_testimonial.html" target="_blank" class="btn-new-tab">New Tab</a>
+        <button onclick="downloadTemplate('social_proof_testimonial.html')" class="btn-download">&#8595; Download</button>
       </div>
     </div>
 
@@ -400,6 +429,17 @@
   <p style="margin-top: 4px;">14 templates &bull; All CAN-SPAM compliant &bull; All link to JotForm &bull; No credit pull</p>
   <p style="margin-top: 4px;">Open any template to preview. Personalization tokens ({{first_name}}, etc.) show as-is in preview.</p>
 </div>
+
+<script>
+function downloadTemplate(filename) {
+  var a = document.createElement('a');
+  a.href = filename;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+</script>
 
 </body>
 </html>
