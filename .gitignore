@@ -2,6 +2,14 @@
 .env.agents
 .env
 .env.local
+.long_lived_token.txt
+
+# Playwright MCP data
+.playwright-mcp/
+
+# Cache and audit data
+data/cache/
+data/audit/
 
 # MCP configs (credentials are read from .env.agents at runtime, not stored here)
 # .claude/mcp.json — tracked: no secrets, safe to commit
