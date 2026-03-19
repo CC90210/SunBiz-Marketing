@@ -3,9 +3,9 @@
 .env
 .env.local
 
-# MCP configs with secrets
-.claude/mcp.json
-.vscode/mcp.json
+# MCP configs (credentials are read from .env.agents at runtime, not stored here)
+# .claude/mcp.json — tracked: no secrets, safe to commit
+# .vscode/mcp.json — tracked: no secrets, safe to commit
 .gemini/settings.json
 
 # Python

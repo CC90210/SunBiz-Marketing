@@ -1,13 +1,19 @@
 @echo off
-REM Meta Ads MCP Wrapper — Sets environment variables before launching MCP server
-REM Update these values with your actual credentials from .env.agents
+REM Meta Ads MCP Wrapper — Reads credentials from .env.agents and launches MCP server
+REM Server: pipeboard-co/meta-ads-mcp (installed via uvx)
+REM Credentials: sourced from .env.agents at project root
 
-set META_ACCESS_TOKEN=INSERT_YOUR_ACCESS_TOKEN
-set META_APP_ID=INSERT_YOUR_APP_ID
-set META_APP_SECRET=INSERT_YOUR_APP_SECRET
-set META_AD_ACCOUNT_ID=INSERT_YOUR_AD_ACCOUNT_ID
+REM Resolve project root (one level up from this script)
+set "SCRIPT_DIR=%~dp0"
+set "PROJECT_ROOT=%SCRIPT_DIR%.."
 
-REM Launch the Meta Ads MCP server (pipeboard-co/meta-ads-mcp)
+REM Parse .env.agents for Meta credentials
+for /f "usebackq tokens=1,* delims==" %%A in ("%PROJECT_ROOT%\.env.agents") do (
+    if "%%A"=="META_ACCESS_TOKEN"  set META_ACCESS_TOKEN=%%B
+    if "%%A"=="META_APP_ID"        set META_APP_ID=%%B
+    if "%%A"=="META_APP_SECRET"    set META_APP_SECRET=%%B
+    if "%%A"=="META_AD_ACCOUNT_ID" set META_AD_ACCOUNT_ID=%%B
+)
+
+REM Launch the Meta Ads MCP server via uvx (pipeboard-co/meta-ads-mcp)
 uvx meta-ads-mcp
-
-echo Meta Ads MCP server started
