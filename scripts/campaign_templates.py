@@ -22,6 +22,7 @@ Usage:
 from __future__ import annotations
 
 import logging
+import os
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta, timezone
 from typing import Optional
@@ -32,7 +33,8 @@ log = logging.getLogger("campaign_templates")
 # Constants
 # ---------------------------------------------------------------------------
 
-JOTFORM_URL = "https://form.jotform.com/253155026259254"
+_JOTFORM_FORM_ID = os.environ.get("JOTFORM_FORM_ID", "253155026259254")
+JOTFORM_URL = f"https://form.jotform.com/{_JOTFORM_FORM_ID}"
 
 # Default US-only targeting (required for FINANCIAL_PRODUCTS_SERVICES category)
 # No age/gender/zip restrictions — broad targeting only

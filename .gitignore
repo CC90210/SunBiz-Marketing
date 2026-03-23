@@ -7,6 +7,9 @@
 # Playwright MCP data
 .playwright-mcp/
 
+# Claude Code project memory (contains session data)
+.claude/projects/
+
 # Cache and audit data
 data/cache/
 data/audit/

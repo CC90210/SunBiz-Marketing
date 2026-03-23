@@ -58,7 +58,8 @@ log = logging.getLogger("meta_campaign_builder")
 
 API_VERSION = "v21.0"
 BASE_URL = f"https://graph.facebook.com/{API_VERSION}"
-JOTFORM_URL = "https://form.jotform.com/253155026259254"
+_JOTFORM_FORM_ID = os.environ.get("JOTFORM_FORM_ID", "253155026259254")
+JOTFORM_URL = f"https://form.jotform.com/{_JOTFORM_FORM_ID}"
 
 LIFETIME_BUDGET_CENTS = 10000  # $100.00
 AD_DELAY_SECONDS = 2

@@ -51,7 +51,8 @@ log = logging.getLogger("meta_ads_engine")
 
 API_VERSION = "v21.0"
 BASE_URL = f"https://graph.facebook.com/{API_VERSION}"
-JOTFORM_URL = "https://form.jotform.com/253155026259254"
+_JOTFORM_FORM_ID = os.environ.get("JOTFORM_FORM_ID", "253155026259254")
+JOTFORM_URL = f"https://form.jotform.com/{_JOTFORM_FORM_ID}"
 
 RATE_LIMIT_DELAY = 2          # seconds between every API call
 RETRY_ATTEMPTS = 3

@@ -51,7 +51,8 @@ log = logging.getLogger("google_ads_engine")
 # Constants
 # ---------------------------------------------------------------------------
 
-JOTFORM_URL = "https://form.jotform.com/253155026259254"
+_JOTFORM_FORM_ID = os.environ.get("JOTFORM_FORM_ID", "253155026259254")
+JOTFORM_URL = f"https://form.jotform.com/{_JOTFORM_FORM_ID}"
 
 RATE_LIMIT_DELAY = 1            # seconds between every API call
 RETRY_ATTEMPTS = 3
